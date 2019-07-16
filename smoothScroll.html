@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset="utf-8" />
+    <style>
+    
+
+        .caixa {
+            border: 1px solid black;
+            height: 20vh;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 120vh;
+            align-items: center;
+        }
+
+        .c1{
+            background: rgb(185, 184, 184);
+        }
+        .c2{
+            background: rgb(182, 154, 154);
+        }
+        .c3{
+            background: rgb(163, 106, 106);
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <header class="caixa c1" id="cabecalho"> 
+        <a href="#cabecalho">CABEÇALHO</a> 
+        <a href="#conteudo">CONTEUDO</a> 
+        <a href="#footer">FOOTER</a> 
+    </header>
+
+    <header class="caixa c2" id="conteudo"> 
+        <a href="#cabecalho">CABEÇALHO</a> 
+        <a href="#conteudo">CONTEUDO</a> 
+        <a href="#footer">FOOTER</a> 
+    </header>
+
+    <header class="caixa c3" id="footer"> 
+        <a href="#cabecalho">CABEÇALHO</a> 
+        <a href="#conteudo">CONTEUDO</a> 
+        <a href="#footer">FOOTER</a> 
+    </header>
+    
+
+
+
+<script>
+    // =)
+    let href ;
+    let offsetTop;
+    document.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(e){
+            e.preventDefault();
+            href = this.href.split('#')[1]
+            offsetTop = document.getElementById(href).offsetTop;
+            window.scroll({top: offsetTop, behavior: 'smooth'})
+        })
+    })
+</script>
+</body>
+</html>
